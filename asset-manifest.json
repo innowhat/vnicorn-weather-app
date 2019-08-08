@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/vnicorn-weather-app/static/css/main.34de6062.chunk.css",
-    "main.js": "/vnicorn-weather-app/static/js/main.2cce3c3e.chunk.js",
-    "main.js.map": "/vnicorn-weather-app/static/js/main.2cce3c3e.chunk.js.map",
+    "main.js": "/vnicorn-weather-app/static/js/main.659743be.chunk.js",
+    "main.js.map": "/vnicorn-weather-app/static/js/main.659743be.chunk.js.map",
     "runtime~main.js": "/vnicorn-weather-app/static/js/runtime~main.6bdfd8e3.js",
     "runtime~main.js.map": "/vnicorn-weather-app/static/js/runtime~main.6bdfd8e3.js.map",
-    "static/js/2.87572cad.chunk.js": "/vnicorn-weather-app/static/js/2.87572cad.chunk.js",
-    "static/js/2.87572cad.chunk.js.map": "/vnicorn-weather-app/static/js/2.87572cad.chunk.js.map",
+    "static/js/2.292296d5.chunk.js": "/vnicorn-weather-app/static/js/2.292296d5.chunk.js",
+    "static/js/2.292296d5.chunk.js.map": "/vnicorn-weather-app/static/js/2.292296d5.chunk.js.map",
     "index.html": "/vnicorn-weather-app/index.html",
-    "precache-manifest.7b4c126ec80c103738a1d2077d951dad.js": "/vnicorn-weather-app/precache-manifest.7b4c126ec80c103738a1d2077d951dad.js",
+    "precache-manifest.8b72143b916d4b3eed46bdebf8de9313.js": "/vnicorn-weather-app/precache-manifest.8b72143b916d4b3eed46bdebf8de9313.js",
     "service-worker.js": "/vnicorn-weather-app/service-worker.js",
     "static/css/main.34de6062.chunk.css.map": "/vnicorn-weather-app/static/css/main.34de6062.chunk.css.map"
   }
