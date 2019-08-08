@@ -11,7 +11,6 @@ class Weather extends React.Component {
     super();
     this.state = {
       city: "",
-      country: "",
       temperature: "",
       description: "",
       searchError: "",
