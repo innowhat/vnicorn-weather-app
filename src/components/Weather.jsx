@@ -11,29 +11,53 @@ class Weather extends React.Component {
     super();
     this.state = {
       city: "",
+      country: "",
       temperature: "",
-      description: ""
+      description: "",
+      searchError: "",
+      isLoading: false
     };
   }
 
   componentDidMount() {
-    let defaultCity = "OSLO";
-
+    let defaultCity = "Helsinki";
     this.fetchWeather(defaultCity);
   }
 
-  fetchWeather = city => {
-    fetch(
-      `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`
+  fetchWeather = async city => {
+    await fetch(
+      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`
     )
       .then(requestData => requestData.json())
       .then(receiveData => {
         console.log(receiveData);
-        this.setState({
-          city: receiveData.name,
-          temperature: receiveData.main.temp,
-          description: receiveData.weather[0].description
-        });
+        if (city) {
+          this.setState({
+            city: receiveData.name ? receiveData.name : "",
+            country:
+              receiveData.sys && receiveData.sys.country
+                ? receiveData.sys.country
+                : "",
+            temperature:
+              receiveData.main && receiveData.main.temp
+                ? receiveData.main.temp
+                : "",
+            description:
+              receiveData.weather && receiveData.weather[0].description
+                ? receiveData.weather[0].description
+                : "",
+            searchError: receiveData.message ? receiveData.message : ""
+          });
+        } else {
+          console.log("oops", receiveData.message);
+          this.setState({
+            temperature: undefined,
+            city: undefined,
+            country: undefined,
+            description: undefined,
+            searchError: "Please enter city"
+          });
+        }
       });
   };
 

@@ -6,13 +6,17 @@ import Heading from "../elements/Heading";
 function WeatherInput(props) {
   return (
     <Card big style={{ width: "100%" }}>
-      <Heading h3>Search by City eg Helsinki</Heading>
       <form onSubmit={props.handleSearch}>
         <input
-          style={{ width: "100%", padding: "10px", fontSize: "40px" }}
+          style={{
+            width: "100%",
+            padding: "10px",
+            fontSize: "40px",
+            textAlign: "center"
+          }}
           type="text"
           name="city"
-          placeholder="Enter city name"
+          placeholder="Enter city eg Helsinki"
         />
         <Button
           secondary
