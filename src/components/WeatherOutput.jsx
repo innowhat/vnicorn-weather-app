@@ -8,6 +8,7 @@ function WeatherOutput(props) {
       <Heading>{props.result.temperature} </Heading>
       <p>{props.result.city}</p>
       <p>{props.result.description}</p>
+      <p>{props.result.error}</p>
     </Card>
   );
 }

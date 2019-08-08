@@ -10,37 +10,37 @@ class Weather extends React.Component {
   constructor() {
     super();
     this.state = {
-      city: null,
-      temperature: null,
-      description: null,
-      isLoading: true
+      city: "",
+      temperature: "",
+      description: ""
     };
   }
 
-  componentDidMount() {}
+  componentDidMount() {
+    let defaultCity = "OSLO";
 
-  handleSearch = event => {
-    event.preventDefault();
-    const city = event.target.city.value;
-    console.log(city);
+    this.fetchWeather(defaultCity);
+  }
+
+  fetchWeather = city => {
     fetch(
       `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`
     )
-      .then(response => response.json())
-      .then(responseData => {
-        console.log(responseData);
-        let temp = [responseData.main.temp, ..."°C"];
-
+      .then(requestData => requestData.json())
+      .then(receiveData => {
+        console.log(receiveData);
         this.setState({
-          city: responseData.name,
-          temperature: temp,
-          description: responseData.weather[0].description,
-          isLoading: false
+          city: receiveData.name,
+          temperature: receiveData.main.temp,
+          description: receiveData.weather[0].description
         });
-      })
-      .catch(error => {
-        console.log("Error fetching and parsing data", error);
       });
+  };
+
+  handleSearch = event => {
+    event.preventDefault();
+    let searchCity = event.target.city.value;
+    this.fetchWeather(searchCity);
   };
 
   render() {
