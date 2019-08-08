@@ -1,10 +1,8 @@
 import React from "react";
-import faker from "faker";
 import Container from "../elements/Container";
 import Flex from "../elements/Flex";
-import Heading from "../elements/Heading";
-import Card from "../elements/Card";
 import WeatherInput from "./WeatherInput";
+import WeatherOutput from "./WeatherOutput";
 
 const API_KEY = "ad1d890318187965928b47ae73fc7bc6";
 
@@ -12,12 +10,9 @@ class Weather extends React.Component {
   constructor() {
     super();
     this.state = {
-      city: "",
-      temperature: "",
-      temp_high: "",
-      temp_low: "",
-      humidity: "",
-      description: "",
+      city: null,
+      temperature: null,
+      description: null,
       isLoading: true
     };
   }
@@ -26,23 +21,21 @@ class Weather extends React.Component {
 
   handleSearch = event => {
     event.preventDefault();
-
     const city = event.target.city.value;
-    const country = event.target.country.value;
+    console.log(city);
     fetch(
-      `http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_KEY}&units=metric`
+      `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`
     )
       .then(response => response.json())
       .then(responseData => {
         console.log(responseData);
+        let temp = [responseData.main.temp, ..."°C"];
+
         this.setState({
           city: responseData.name,
-          temperature: responseData.main.temp,
-          temp_high: responseData.main.temp_max,
-          temp_low: responseData.main.temp_min,
-          humidity: responseData.main.humidity,
+          temperature: temp,
           description: responseData.weather[0].description,
-          loading: false
+          isLoading: false
         });
       })
       .catch(error => {
@@ -56,21 +49,7 @@ class Weather extends React.Component {
         <Container>
           <Flex>
             <WeatherInput handleSearch={this.handleSearch} />
-          </Flex>
-        </Container>
-        <Container>
-          <Flex>
-            <Card primary delay={125} style={{ width: "100%" }}>
-              <Heading style={{ color: "#fff" }} h4>
-                <h3>{this.state.city}</h3>
-                <h1>{this.state.temperature}</h1>
-                <h3>{this.state.humidity}</h3>
-                <p>
-                  {this.state.temp_low}, {this.state.temp_high}
-                </p>
-                <p>{this.state.description}</p>
-              </Heading>
-            </Card>
+            <WeatherOutput result={this.state} />
           </Flex>
         </Container>
       </div>

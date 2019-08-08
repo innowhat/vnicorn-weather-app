@@ -3,7 +3,7 @@ import styled, { css } from "styled-components";
 
 const baseStyle = css`
   margin-bottom: ${props => props.noMargin && "0"};
-  color: #202020;
+  color: #fff;
   font-family: "Poppins", sans-serif;
   font-weight: 600;
   margin-top: 0;
