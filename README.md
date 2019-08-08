@@ -1,13 +1,14 @@
 # Vnicorn Weather App
 
-![ReactJS Vnicorn Weather App  ](Screenshot.png "ReactJS")
+![ReactJS Vnicorn Weather App  ](Screenshot.png "Vnicorn Weather App ")
 
 ## Description
 
 This is a ReactJS based App that allows the user to search for current weather status of any city in the world, utilizing API calls.
 
 ## Demo
-https://innowhat.github.io/vnicorn-weather-app/
+
+https://innowhat.github.io/vnicorn-weather-app
 
 ## Built With
 
@@ -19,9 +20,8 @@ https://innowhat.github.io/vnicorn-weather-app/
 
 ### https://openweathermap.org
 
-
-
 ## Acknowledgments
+
 Style template - https://github.com/gisderdube/react-component-system
 
 ## How to install
