@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/vnicorn-weather-app/precache-manifest.8b72143b916d4b3eed46bdebf8de9313.js"
+  "/vnicorn-weather-app/precache-manifest.67f2d9dc81b65b6ccdd43de873fd8e67.js"
 );
 
 self.addEventListener('message', (event) => {
