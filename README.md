@@ -1,4 +1,4 @@
-# Vnicorn Weather App
+# Weather App
 
 
 ## Description
@@ -7,7 +7,7 @@ This is a ReactJS based App that allows the user to search for current weather s
 
 ## Demo
 
-https://innowhat.github.io/vnicorn-weather-app
+https://innowhat.github.io/weather-app
 
 ## Built With
 
