@@ -1,6 +1,6 @@
 {
-  "name": "vnicorn-weather-app",
-  "homepage": "https://innowhat.github.io/vnicorn-weather-app",
+  "name": "weather-app",
+  "homepage": "https://innowhat.github.io/weather-app",
   "version": "0.1.1",
   "private": true,
   "dependencies": {

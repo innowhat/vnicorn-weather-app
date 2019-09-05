@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <Container>
       <Heading h2 style={{ textAlign: "center" }}>
-        Vnicorn Weather App
+        Weather App
       </Heading>
     </Container>
   );
